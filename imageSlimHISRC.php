@@ -48,7 +48,7 @@
  *
  * See the default properties for a description of each.
  *
- * HISRC changes start at line 268 - Jason Carney DashMedia.com.au
+ * HISRC changes start at line 277 - Jason Carney DashMedia.com.au
  **/
 
 if (empty($input)) { return; }  // if we've got nothing to do, it's quittin' time
