@@ -272,7 +272,7 @@ foreach ($dom->getElementsByTagName('img') as $node) {  // for all our images
 			'input' => $file,
 			'useResizer' => $useResizer
 		);
-		$option_str = '';
+		// $option_str = '';
 
 		///////////////////////////////////////////
 		/// HISRC MODIFICATION
@@ -280,9 +280,10 @@ foreach ($dom->getElementsByTagName('img') as $node) {  // for all our images
 		///////////////////////////////////////////
 		
 		for($count=0; $count<3; $count++){
+			$option_str = '';
 			if($count == 0){
-				$opts['w'] /= 2;
-				$opts['h'] /= 2;
+				$opts['w'] = round($opts['w']/2);
+				$opts['h'] = round($opts['h']/2);
 			} else {
 				$opts['w'] *= 2;
 				$opts['h'] *= 2;
