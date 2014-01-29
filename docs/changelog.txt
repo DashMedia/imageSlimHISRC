@@ -1,0 +1,14 @@
+==1.03pl==
+-Fixed inline width and heights being output as 0px
+-Fixed hisrc not correctly generating 1/2 size when smaller than the maxWidth
+-Changed default maxWidth and maxHeight to 1000px
+
+==1.02pl==
+-Fixed issue where three values were being passed to setAttribute
+
+==1.01pl==
+-Fixed issue where images where being generated as 1px coloured squares
+
+==1.0pl==
+-Inital release
+-Fixed issue where the hisrc output wasn't being generated when images are not "too large"

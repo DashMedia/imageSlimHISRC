@@ -1,0 +1,3 @@
+imageSlimHISRC is a rehash of the imageSlim snippet by jgrant to output hisrc.js-friendly markup.
+All parameters used by imageSlim are availible to you in imageSlimHISRC, hovever at the moment external images are not hisrc supported, so you will get the same behaviour as imageSlim in the case of external images.
+You will need to include and initalise hisrc.js (availible on github) in your javascript

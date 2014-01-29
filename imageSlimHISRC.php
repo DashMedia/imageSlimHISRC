@@ -61,8 +61,8 @@ if (isset($options)) {  // if we're being called as an output filter, set variab
 $scale = empty($scale) ? 1 : (float) $scale;
 // $convertThreshold = isset($convertThreshold) && $convertThreshold !== '' ? (float) $convertThreshold * 1024 : FALSE;
 $convertThreshold = isset($convertThreshold) && $convertThreshold !== '' ? (float) $convertThreshold * 1024 : FALSE;
-$maxWidth = isset($maxWidth) && $maxWidth !== '' ? (int) $maxWidth: 999999;
-$maxHeight = isset($maxHeight) && $maxHeight !== '' ? (int) $maxHeight: 999999;
+$maxWidth = isset($maxWidth) && $maxWidth !== '' ? (int) $maxWidth: 1000;
+$maxHeight = isset($maxHeight) && $maxHeight !== '' ? (int) $maxHeight: 1000;
 $phpthumbof = isset($phpthumbof) ? $phpthumbof : '';
 $q0 = isset($q0) ? $q0 : 20;
 $q1 = isset($q1) ? $q1 : 75;
@@ -282,9 +282,9 @@ foreach ($dom->getElementsByTagName('img') as $node) {  // for all our images
 		for($count=0; $count<3; $count++){
 			$option_str = '';
 			if($count == 0){
-				$opts['w'] = round($opts['w']/2);
-				$opts['h'] = round($opts['h']/2);
-			} else {
+				$opts['w'] = round($size[0]/2);
+				$opts['h'] = round($size[1]/2);
+			} else{
 				$opts['w'] *= 2;
 				$opts['h'] *= 2;
 			}
@@ -300,8 +300,8 @@ foreach ($dom->getElementsByTagName('img') as $node) {  // for all our images
 				$node->setAttribute('src', $modx->runSnippet('phpthumbof', $image));
 			} else if ($count == 1) {
 				$node->setAttribute('data-1x', $modx->runSnippet('phpthumbof', $image));  
-				$node->setAttribute('width', $opts['w'], $image);  
-				$node->setAttribute('height', $opts['h'], $image); 
+				$node->setAttribute('height', $size[1]);
+				$node->setAttribute('width', $size[0]);
 			} else {
 				$node->setAttribute('data-2x', $modx->runSnippet('phpthumbof', $image)); 
 			}
